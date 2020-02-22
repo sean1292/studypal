@@ -10,7 +10,6 @@ app.use(express.json()); // needed to be able read the body
 const apiRouter = require('../server/routes/api');
 const usersRouter = require('../server/routes/users');
 const msgRouter = require('../server/routes/msgs');
-//TODO
 
 // route handler to respond with main app
 app.get('/', (req, res) =>
@@ -36,6 +35,11 @@ app.use((err, req, res, next) => {
   };
   const errorObj = Object.assign({}, defaultErr, err);
   res.status(errorObj.status).send(errorObj.message);
+});
+
+//start the server
+app.listen(PORT, () => {
+  console.log(`Server listening on port: ${PORT}`);
 });
 
 module.exports = app;
