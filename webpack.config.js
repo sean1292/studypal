@@ -20,6 +20,19 @@ module.exports = {
       {
         test: /\.s?css/,
         use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              bypassOnDebug: true, // webpack@1.x
+              disable: true // webpack@2.x and newer
+            }
+          }
+        ]
       }
     ]
   },
@@ -33,10 +46,19 @@ module.exports = {
     publicPath: '/',
     port: 8080,
     proxy: {
-      '/api': {
+      '/api/*': {
+        target: 'http://localhost:3000',
+        secure: false
+      },
+      '/users/*': {
+        target: 'http://localhost:3000',
+        secure: false
+      },
+      '/msg/*': {
         target: 'http://localhost:3000',
         secure: false
       }
-    }
+    },
+    historyApiFallback: true
   }
 };

@@ -3,6 +3,15 @@
   width: 500px;
   margin: 150px auto;
 }
+
+.login-invalid-msg {
+  color: red;
+}
+
+.btnSubmit {
+  display: block;
+}
+
 .welcome {
   margin-right: 20px;
 }
@@ -29,6 +38,38 @@ span {
 
 .checkbox {
   margin-right: 10px;
+}
+
+.matchBox {
+  width: 200px;
+  height: 200px;
+  background-color: lightskyblue;
+  border: black 1px solid;
+  display: inline-block;
+}
+
+/* .messageBox {
+  width: 200px;
+  height: 100px;
+  background-color: lightpink;
+  border: black 1px solid;
+  display: inline-block;
+} */
+
+.center {
+  margin-left: 30px;
+}
+
+.profileMatches {
+  width: 900px;
+  height: 350px;
+  background-color: lightyellow;
+}
+
+.profileMessages {
+  width: 900px;
+  height: 350px;
+  background-color: lightgray;
 }
 
 /* .register-input .text {
